@@ -4,24 +4,24 @@ public class Main {
     
     public static void main(String[] args) {
 
-        Course course1;
-        Course course2;
-        Course course3;
-        Course course4;
-        
         CourseManager prospectus = new CourseManager();
 
-        course1 = new Course("Software Testing", 5, 2000);
-        Module module1 = new Module("Unit Testing", 10, "Assessment");
-        Module module2 = new Module("Acceptance Testing", 20, "Coursework");
-        Module module3 = new Module("Boundary Values", 10, "Exam");
-        try {
-            course1.addModule(module1);
-            course1.addModule(module2);
-            course1.addModule(module3);
-        } catch (ModuleException e) {
-            System.out.println("Too many modules.\n");
-        }
+        // Course course1;
+        // Course course2;
+        // Course course3;
+        // Course course4;
+        
+        // course1 = new Course("Software Testing", 5, 2000);
+        // Module module1 = new Module("Unit Testing", 10, "Assessment");
+        // Module module2 = new Module("Acceptance Testing", 20, "Coursework");
+        // Module module3 = new Module("Boundary Values", 10, "Exam");
+        // try {
+        //     course1.addModule(module1);
+        //     course1.addModule(module2);
+        //     course1.addModule(module3);
+        // } catch (ModuleException e) {
+        //     System.out.println("Too many modules.\n");
+        // }
 
 
         // course2 = new Course("System Analysis", 3, 1000);
@@ -52,8 +52,42 @@ public class Main {
         //     System.out.println("Course length must be less than or equal to 10 days.\n");
         // }
         
+        try {
+            prospectus.addCourse("Software Testing 0", 5, 2000);
+        } catch (CourseConstructorException e) {
+            e.printStackTrace();
+        }
 
-        prospectus.addCourse(course1);
+        try {
+            prospectus.addCourse(null, 5, 2000);
+        } catch (CourseConstructorException e) {
+            e.printStackTrace();
+        }
+
+         try {
+            prospectus.addCourse("Software Testing ", 12, 2000);
+        } catch (CourseConstructorException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            prospectus.addCourse("Software Testing 1", 5, 2000);
+        } catch (CourseConstructorException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            prospectus.addCourse("Software Testing 2", 5, 2000);
+        } catch (CourseConstructorException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            prospectus.addCourse("Software Testing 3", 5, 2000);
+        } catch (CourseConstructorException e) {
+            e.printStackTrace();
+        }
+        
         //prospectus.addCourse(course2);
         
         prospectus.displayCourses();

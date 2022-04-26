@@ -54,7 +54,7 @@ public class Course {
         if ( numDays >= 1 && numDays <=10 ) {
             numberOfDays = numDays;
         } else {
-            throw new IllegalArgumentException("Exception: Number of Days provided not an acceptable number.");
+            throw new IllegalArgumentException("Exception: Number of Days " + numDays + " is not an acceptable number.");
         }
         
     }
